@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#E0F7FA"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tvCabecalho"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="AULA 04 - Exercício 01 "
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvValorEtanol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Valor Etanol: " />
+
+    <EditText
+        android:id="@+id/etValorEtanol"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ex: 0.00"
+        android:inputType="numberDecimal"/>
+
+    <TextView
+        android:id="@+id/tvValorGasolina"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Valor Gasolina:" />
+
+    <EditText
+        android:id="@+id/etValorGasolina"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ex: 0.00"
+        android:inputType="numberDecimal"/>
+
+    <TextView
+        android:id="@+id/tvConsumoEtanol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Consumo Etanol" />
+
+    <EditText
+        android:id="@+id/etConsumoEtanol"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ex: 0.00"
+        android:inputType="numberDecimal"/>
+
+    <TextView
+        android:id="@+id/tvConsumoGasolina"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Consumo Gasolina:" />
+
+    <EditText
+        android:id="@+id/etConsumoGasolina"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ex: 0.00"
+        android:inputType="numberDecimal"/>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+  <!-- Como aumentar o tamanho do texto do tvResultado? -->
+
+    <TextView
+        android:id="@+id/tvResultado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Resultado:"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:id="@+id/tvResultadoFinal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#FF0000"
+        android:textSize="18sp"/>
+
+
+</LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btCalcular"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Calcular" />
+
+        <Button
+            android:id="@+id/btSair"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Sair" />
+
+    </LinearLayout>
+
+</LinearLayout>
