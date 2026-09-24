@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tvCodigo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cód. Combustível"
+        android:textColor="@android:color/darker_gray" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp">
+
+        <EditText
+            android:id="@+id/etCodigo"
+            android:layout_width="161dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:importantForAutofill="no"
+            android:inputType="number" />
+
+        <Button
+            android:id="@+id/btPesquisar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PESQUISAR" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvCidade"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cidade Abastecimento"
+        android:textColor="@android:color/darker_gray" />
+
+    <EditText
+        android:id="@+id/etCidade"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:layout_marginBottom="16dp"
+        android:importantForAutofill="no" />
+
+    <TextView
+        android:id="@+id/tvQuantidade"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Quantidade Litros"
+        android:textColor="@android:color/darker_gray" />
+
+    <EditText
+        android:id="@+id/etQuantidade"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:layout_marginBottom="16dp"
+        android:importantForAutofill="no" />
+
+    <Button
+        android:id="@+id/btIncluir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="INCLUIR REGISTRO" />
+
+</LinearLayout>
