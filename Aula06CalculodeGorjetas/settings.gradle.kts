@@ -22,6 +22,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Aula06-CalculodeGorjetas"
+rootProject.name = "TipTime"
 include(":app")
- 

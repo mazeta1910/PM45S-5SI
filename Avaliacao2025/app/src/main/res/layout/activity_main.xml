@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/botao2_1pt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+1"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/botao1_1pt"
+        app:layout_constraintEnd_toEndOf="@+id/time_2"
+        app:layout_constraintStart_toStartOf="@+id/time_2"
+        app:layout_constraintTop_toTopOf="@+id/botao1_1pt" />
+
+    <Button
+        android:id="@+id/botao2_9pts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="+9"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/botao2_1pt"
+        app:layout_constraintStart_toStartOf="@+id/botao2_1pt"
+        app:layout_constraintTop_toBottomOf="@+id/botao2_6pts" />
+
+    <Button
+        android:id="@+id/botao2_3pts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="+3"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/botao2_1pt"
+        app:layout_constraintStart_toStartOf="@+id/botao2_1pt"
+        app:layout_constraintTop_toBottomOf="@+id/botao2_1pt" />
+
+    <Button
+        android:id="@+id/botao2_6pts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="+6"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/botao2_1pt"
+        app:layout_constraintStart_toStartOf="@+id/botao2_1pt"
+        app:layout_constraintTop_toBottomOf="@+id/botao2_3pts" />
+
+    <Button
+        android:id="@+id/botao2_12pts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="+12"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/botao2_1pt"
+        app:layout_constraintStart_toStartOf="@+id/botao2_1pt"
+        app:layout_constraintTop_toBottomOf="@+id/botao2_9pts" />
+
+    <TextView
+        android:id="@+id/time_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="20dp"
+        android:text="Nós:"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/time_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="120dp"
+        android:text="Eles:"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/pontuacao_time_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="0"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="@+id/time_1"
+        app:layout_constraintStart_toStartOf="@+id/time_1"
+        app:layout_constraintTop_toBottomOf="@+id/time_1" />
+
+    <TextView
+        android:id="@+id/pontuacao_time_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="0"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="@+id/time_2"
+        app:layout_constraintStart_toStartOf="@+id/time_2"
+        app:layout_constraintTop_toBottomOf="@+id/time_2" />
+
+    <Button
+        android:id="@+id/botao1_1pt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="+1"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/time_1"
+        app:layout_constraintStart_toStartOf="@+id/time_1"
+        app:layout_constraintTop_toBottomOf="@+id/pontuacao_time_1" />
+
+    <Button
+        android:id="@+id/botao1_3pts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="+3"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/botao1_1pt"
+        app:layout_constraintStart_toStartOf="@+id/botao1_1pt"
+        app:layout_constraintTop_toBottomOf="@+id/botao1_1pt" />
+
+    <Button
+        android:id="@+id/botao1_6pts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="+6"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/botao1_1pt"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/botao1_1pt"
+        app:layout_constraintTop_toBottomOf="@+id/botao1_3pts" />
+
+    <Button
+        android:id="@+id/botao1_9pts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="+9"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/botao1_1pt"
+        app:layout_constraintStart_toStartOf="@+id/botao1_1pt"
+        app:layout_constraintTop_toBottomOf="@+id/botao1_6pts" />
+
+    <Button
+        android:id="@+id/botao1_12pts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="+12"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/botao1_1pt"
+        app:layout_constraintStart_toStartOf="@+id/botao1_1pt"
+        app:layout_constraintTop_toBottomOf="@+id/botao1_9pts" />
+
+    <Button
+        android:id="@+id/button_historico"
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:text="Histórico de Jogadas"
+        app:layout_constraintEnd_toEndOf="@+id/botao2_12pts"
+        app:layout_constraintStart_toStartOf="@+id/botao1_12pts"
+        app:layout_constraintTop_toBottomOf="@+id/botao2_12pts" />
+
+    <Button
+        android:id="@+id/zerar_historico"
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Zerar Histórico"
+        app:layout_constraintEnd_toEndOf="@+id/button_historico"
+        app:layout_constraintStart_toStartOf="@+id/button_historico"
+        app:layout_constraintTop_toBottomOf="@+id/button_historico" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
