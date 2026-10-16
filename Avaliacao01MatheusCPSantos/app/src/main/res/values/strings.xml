@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Avaliacao01-MatheusCPSantos</string>
+    <string name="descricao">Descrição</string>
+    <string name="valor">Valor:</string>
+    <string name="tipo">Tipo:</string>
+    <string name="_0_00">R$%s</string>
+    <string name="desc">Desc:</string>
+    <string name="debito">Débito</string>
+    <string name="credito">Crédito</string>
+    <string name="lancar">Lançar</string>
+    <string name="total_pagar">Total Pagar</string>
+    <string name="total_receber">Total Receber</string>
+    <string name="lancar1">Lançar</string>
+    <string name="debito1">Débito</string>
+    <string name="credito2">Crédito</string>
+    <string name="lancamento_sucesso">O lançamento foi feito com sucesso!</string>
+    <string name="totalReceber">Total a receber:R$%s</string>
+    <string name="totalPagar">Total a pagar:R$%s</string>
+</resources>

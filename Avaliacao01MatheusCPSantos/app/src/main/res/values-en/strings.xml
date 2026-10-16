@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Avaliacao01-MatheusCPSantos</string>
+    <string name="descricao">Description:</string>
+    <string name="valor">Value:</string>
+    <string name="tipo">Type:</string>
+    <string name="_0_00">$%s</string>
+    <string name="desc">Desc:</string>
+    <string name="debito">Debit</string>
+    <string name="credito">Credit</string>
+    <string name="lancar">Launch</string>
+    <string name="total_pagar">Payment Total</string>
+    <string name="total_receber">Receive Total</string>
+    <string name="lancar1">Launch</string>
+    <string name="debito1">Debit</string>
+    <string name="credito2">Credit</string>
+    <string name="lancamento_sucesso">Ok!</string>
+    <string name="totalReceber">Receive total:</string>
+    <string name="totalPagar">Payment total:</string>
+</resources>
