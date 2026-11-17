@@ -1,6 +1,7 @@
 package br.edu.utfpr.usandosqlite
 
 import android.content.ContentValues
+import android.content.Intent
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.os.Bundle
@@ -9,15 +10,19 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import br.edu.utfpr.usandosqlite.database.DatabaseHandler
 import br.edu.utfpr.usandosqlite.databinding.ActivityMainBinding
+import br.edu.utfpr.usandosqlite.entity.Cadastro
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityMainBinding
-    private lateinit var banco: SQLiteDatabase
+    private lateinit var binding : ActivityMainBinding
+
+    private lateinit var banco: DatabaseHandler
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         binding = ActivityMainBinding.inflate(layoutInflater)
 
         enableEdgeToEdge()
@@ -30,19 +35,9 @@ class MainActivity : AppCompatActivity() {
 
         setButtonListeners()
 
+        banco = DatabaseHandler(this)
 
-        banco = SQLiteDatabase.openOrCreateDatabase(
-            this.getDatabasePath("banco.db"),
-            null
-        )
-
-        banco.execSQL(
-            "CREATE TABLE IF NOT EXISTS cadastro " +
-                    "(_id INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                    "nome TEXT, " +
-                    "telefone TEXT)"
-        )
-    }
+    } //fim do onCreate()
 
     private fun setButtonListeners() {
         binding.btIncluir.setOnClickListener {
@@ -58,106 +53,81 @@ class MainActivity : AppCompatActivity() {
             btPesquisarOnClick()
         }
         binding.btListar.setOnClickListener {
-            btListaronClick()
+            btListarOnClick()
         }
     }
 
-    fun btPesquisarOnClick() {
+    fun btIncluirOnClick() {
 
-        val cod = binding.etCod.text.toString()
-
-        val registros: Cursor = banco.query(
-            "cadastro",
-            null,
-            "_id = $cod",
-            null,
-            null,
-            null,
-            null
+        val cadastro = Cadastro(
+            0,
+            binding.etNome.text.toString(),
+            binding.etTelefone.text.toString()
         )
 
-        if (registros.moveToNext()) {
-            binding.etNome.setText(registros.getString(NOME))
-            binding.etTelefone.setText(registros.getString(TELEFONE))
-        } else {
-            Toast.makeText(this, "Registro não encontrado!", Toast.LENGTH_SHORT).show()
-        }
-
-    }
-
-    fun btExcluirOnClick() {
-        val cod = binding.etCod.text.toString()
-
-        banco.delete(
-            "cadastro",
-            "_id = $cod",
-            null
-        )
+        banco.inserir(cadastro)
 
         Toast.makeText(this, "Sucesso!", Toast.LENGTH_SHORT).show()
     }
 
     fun btAlterarOnClick() {
-        val cod = binding.etCod.text.toString()
-        val nome = binding.etNome.text.toString()
-        val telefone = binding.etTelefone.text.toString()
-
-        val registro = ContentValues()
-        registro.put("nome", nome)
-        registro.put("telefone", telefone)
-
-        banco.update(
-            "cadastro",
-            registro,
-            "_id = $cod",
-            null
+        val cadastro = Cadastro(
+            binding.etCod.text.toString().toInt(),
+            binding.etNome.text.toString(),
+            binding.etTelefone.text.toString()
         )
+
+        banco.alterar(cadastro)
 
         Toast.makeText(this, "Sucesso!", Toast.LENGTH_SHORT).show()
     }
 
-    fun btIncluirOnClick() {
-        val nome = binding.etNome.text.toString()
-        val telefone = binding.etTelefone.text.toString()
-
-        val registro = ContentValues()
-        registro.put("nome", nome)
-        registro.put("telefone", telefone)
-
-        banco.insert("cadastro", null, registro)
-
-        Toast.makeText(this, "Inclusão realizada com sucesso!", Toast.LENGTH_SHORT).show()
+    fun btExcluirOnClick() {
+        val cod = binding.etCod.text.toString().toInt()
+        banco.excluir( cod )
+        Toast.makeText(this, "Sucesso!", Toast.LENGTH_SHORT).show()
     }
 
-    fun btListaronClick() {
-        val registros: Cursor = banco.query(
-            "cadastro",
-            null,
-            null,
-            null,
-            null,
-            null,
-            null
-        )
+    fun btPesquisarOnClick() {
+
+        val registro = banco.pesquisar( binding.etCod.text.toString().toInt() )
+
+        if( registro != null ) {
+            binding.etNome.setText( registro.nome )
+            binding.etTelefone.setText( registro.telefone )
+        } else {
+            Toast.makeText(this, "Registro não encontrado!",  Toast.LENGTH_SHORT).show()
+        }
+    }
+
+
+    fun btListarOnClick() {
+
+        /*val registros = banco.listar()
 
         val saida = StringBuilder()
 
-        while (registros.moveToNext()) {
-            saida.append(registros.getInt(ID))
-            saida.append(" - ")
-            saida.append(registros.getString(NOME))
-            saida.append(" - ")
-            saida.append(registros.getString(TELEFONE))
-            saida.append("\n")
+        registros.forEach { registro ->
+            saida.append( registro.id )
+            saida.append( " - " )
+            saida.append( registro.nome )
+            saida.append( " - " )
+            saida.append( registro.telefone )
+            saida.append( "\n" )
         }
-        registros.close() // É sempre uma boa prática fechar o Cursor
 
-        Toast.makeText(this, saida.toString(), Toast.LENGTH_LONG).show()
+        Toast.makeText(this, saida.toString(), Toast.LENGTH_SHORT).show()
+*/
+
+        val intent = Intent(this, ListarActivity::class.java)
+        startActivity(intent)
     }
 
-    companion object{
+    companion object {
         private const val ID = 0
         private const val NOME = 1
         private const val TELEFONE = 2
     }
-}
+
+
+} //fim da MainActivity
